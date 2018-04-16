@@ -1,0 +1,61 @@
+.icon {
+  height: 100%;
+  width: 195px;
+  background-color: rgba(52, 143, 237, 0.15);
+  text-align: center;
+  font-size: 22px;
+}
+.icon .text {
+  margin-top: 15px;
+}
+.line {
+  overflow: hidden;
+  display: flex;
+  height: 176px;
+  justify-content: space-between;
+}
+.line-margin {
+  margin-top: 3px;
+}
+.right-full {
+  flex: 1;
+}
+.right-full table {
+  width: 100%;
+}
+.right-full .title{
+  font-size: 37px;
+  text-align: center;
+  background-color: rgba(52, 143, 237, 0.4);
+  color: #fff;
+  margin: 0 3px;
+}
+.right-full td {
+  color: #fff;
+  text-align: center;
+  height: 38px;
+}
+.title-tr td {
+  background-color: rgba(52, 143, 237, 0.4);
+}
+.ct-tr {
+  background-color: rgba(52, 143, 237, 0.15);
+}
+
+.right-not-full {
+  width: 760px;
+  height: 100%;
+  background-color: rgba(52, 143, 237, 0.15);
+}
+.car {
+  background-color: rgba(52, 143, 237, 0.15);
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.car img {
+  height: 20px;
+  vertical-align: middle;
+}

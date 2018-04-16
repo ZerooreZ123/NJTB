@@ -1,0 +1,85 @@
+#map {
+  width: 1443px;
+  height: 1025px;
+}
+.map-legend {
+  height: 50px;
+}
+/* 下面的两行样式是设置地图类型切换按钮不显示的问题(其实已经显示了，只不过图标和文字被base.css里的样式设为白色字体了) 
+  这个坑真是毙了一只狗了，花了大半天时间折腾，
+*/
+label span {
+  color: black;
+}
+.amap-ui-control-container label {
+  background: 0;
+}
+.amap-ui-control-layer .iconfont {
+  color: black;
+}
+
+/* 搜索栏样式 */
+/* 隐藏竖直方向滚动条 */
+/* ::-webkit-scrollbar {display:none}    */
+
+.news_tab {
+  width: 380px;
+  height: 1000px;
+  background: rgba(52, 143, 237, 0.2);
+  border-radius: 6px;
+}
+.news_tab .tables {
+  margin: 0 auto;
+  height: 865px;
+  width: 377px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.news_tab .tables td {
+  text-align: center;
+  width: 94px;
+}
+.news_tab .s_search {
+  height: 77px;
+  width: 370px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+}
+.stats_s table th {
+  height: 48px;
+  width: 104px;
+  background: #3590ed;
+}
+
+.stats_s table tr {
+  height: 36px;
+  width: 104px;
+  background: rgba(52, 143, 237, 0.2);
+  cursor: pointer;
+}
+.s_search p {
+  height: 77px;
+  line-height: 77px;
+}
+.s_search input {
+  height: 40px;
+  width: 290px;
+  background: rgba(52, 143, 237, 0.2);
+  border: none;
+  font-size: 20px;
+  padding: 0 6px;
+}
+
+.s_search span {
+  height: 40px;
+  width: 100px;
+  background: #3590ed;
+  text-align: center;
+  display: inline-block;
+  line-height: 40px;
+  border-radius: 6px;
+}
+/* ==================================== */

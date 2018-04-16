@@ -1,0 +1,48 @@
+
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  height: 55px;
+  background-color: rgba(26, 147, 251, 1);
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.subtitle{
+  height: 55px;
+  background-color: rgba(52, 143, 237, 0.4);
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.itemsContent{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 830px;
+}
+
+.carsItem{
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 237px;
+}
+
+.item{
+  height: 45px;
+  margin-bottom: 2px;
+}
+
+.footer{
+  height: 70px;
+  margin-top: 10px;
+}
+
+.font{
+  font-size: 20px;
+  color: white;
+}

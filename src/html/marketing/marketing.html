@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>营销</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/marketing.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src='../../js/common/echarts-liquidfill.js'></script>
+  <script src="../../component/marketing/paymentDegree.js"></script>
+  <script src="../../component/marketing/yieldDegree.js"></script>
+  <script src="../../component/marketing/ranking.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="content mainLayout" id="root" v-cloak>
+    <div style="display: flex;flex: 2;flex-direction: column;margin-bottom: 5px;">
+      <div class="toptitle">
+        <a href="../../index.html">
+          <img src="../../imgs/marketing/marketing_home.png" />
+          <span>南京天宝</span>
+        </a>
+        <a href="../../html/marketing/contract.html" class="buttonNormal" style="height: 45px;">
+          <span>合同</span>
+        </a>
+      </div>
+      <div class="columnContent block-bg">
+        <span class="compleDegreeTitle">回款完成率(%)</span>
+        <div class="areaContent">
+            <payment v-bind:data=comple></payment>
+            <payment v-bind:data=comple></payment>
+        </div>
+      </div>
+      <div class="columnContent block-bg" style="margin-top:10px;">
+        <span class="compleDegreeTitle">产量完成率(%)</span>
+        <div class="areaContent">
+          <yield v-bind:data=comple></yield>
+          <yield v-bind:data=comple></yield>
+        </div>
+      </div>
+    </div>
+    <ranking type='salesVol'></ranking>
+    <ranking type='payment'></ranking>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      components: {
+        ranking: Ranking,
+        payment: PaymentDegree,
+        yield: YieldDegree,
+      },
+      data: {
+        comple: { title: 'sdsdsd' },
+      }
+    })
+  </script>
+</body>
+
+</html>

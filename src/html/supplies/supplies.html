@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>物资</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src="../../component/supplies/supplyBar.js"></script>
+  <script src="../../component/supplies/supplyLine.js"></script>
+  <script src="../../component/supplies/supplyMonth.js"></script>
+  <script src="../../component/supplies/supplyPie.js"></script>
+  <script src="../../html/supplies/instore.js"></script>
+  <script src="../../html/supplies/realtime.js"></script>
+  <script src="../../html/supplies/month.js"></script>
+  <style>
+    .supplies-wrap{width: 1920px;height: 1030px;display: flex;flex-wrap: wrap;justify-content: space-around;align-content: space-around;}
+    .supplies-item{width: 955px;height: 510px;}
+  </style>
+</head>
+<body>
+  <div class="content" id="root">
+    <home></home>
+    <div class="supplies-wrap">
+      <div class="instore-wrap supplies-item block-bg">
+        <instore :instoreinfo="instoreInfo"></instore>
+      </div>
+      <div class="realtime-wrap supplies-item block-bg">
+        <realtime :realtimeinfo="realtimeInfo"></realtime>
+      </div>
+      <div class="month-wrap supplies-item block-bg">
+        <month-supplie :monthinfo="monthInfo"></month-supplie>
+      </div>
+      <div class="year-wrap supplies-item block-bg" >
+        <year-supplie :yearinfo="yearInfo"></year-supplie>
+      </div>
+     </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:'#root',
+      components: {
+        'instore':SupplyLine,
+        'realtime':SupplyBar,
+        'month-supplie':SupplyMonth,
+        'year-supplie':SupplyPie,
+      },
+      data: {
+        instoreInfo:{},
+        realtimeInfo:{},
+        monthInfo:{},
+        yearInfo:{},
+      },
+      mounted(){
+        this.instor();
+        this.realTime();
+        this.month();
+        this.year();
+      },
+      methods: {
+        instor(){
+          this.instoreInfo = this.transformInstore(instore.list[0].zxclist);
+        },
+        realTime(){
+          const resObj = realTime.list;
+          const resList = [];
+          console.log(resObj);
+					for (let key in resObj) {
+						resList.push({ title: key, data: resObj[key] });
+					}
+          this.realtimeInfo = this.transformRealTime(resList[0]);
+        },
+        month(){
+          this.monthInfo = this.transformMonth(monthData.list[0].purchasedayplanList);
+        },
+        year(){
+          this.yearInfo = this.transformYear(monthData.list[0].purchasedayplanList);
+        },
+        transformInstore(itemData){
+          const arr = [];
+          const lineJin = [];  //进
+					const lineXiao = [];//销
+					const lineCun = []; //存
+          const lineName = []; //产品名
+          itemData.forEach(o => {
+						lineJin.push(o.inquantity);
+						lineXiao.push(o.outquantity);
+						lineCun.push(o.currentAmount);
+						lineName.push(o.yctype);
+          });
+          // arr.push({ jin: lineJin, xiao: lineXiao, cun: lineCun, name: lineName});
+          // 中联站是数组，天宝的是单站，不需要放数组，注意！！，滁州的是数组
+          const resData = { jin: lineJin, xiao: lineXiao, cun: lineCun, name: lineName}
+          return resData;
+        },
+        transformRealTime(itemData){
+          const arr = [];
+          // itemData.forEach(obj => {
+            const barData = itemData.data[0];
+            const pieData = itemData.data[1];
+
+            const temp = [];
+            const name = [];
+
+            barData.forEach(bar => {
+              temp.push(bar.currentAmount)
+              name.push(bar.yctype);
+            });
+            const pies = pieData.map(piedata => { // 饼图的数据
+              return { value: piedata.nums, name: piedata.xValue };
+            });
+
+            // arr.push({ nameData: name, data: temp, title: obj.title, pie: pies });
+            const resData = { nameData: name, data: temp, title: itemData.title, pie: pies };
+          // })
+          return resData;
+        },
+        transformMonth(itemData){
+          const arr = [];
+          const lineData = [];  //进
+          const lineName = []; //产品名
+          itemData.forEach(o => {
+						lineData.push(o.qty);
+						lineName.push(o.materialName);
+          });
+          // arr.push({ jin: lineJin, xiao: lineXiao, cun: lineCun, name: lineName});
+          // 中联站是数组，天宝的是单站，不需要放数组，注意！！，滁州的是数组
+          const resData = { lineData, name: lineName}
+          return resData;
+        },
+        transformYear(itemData){
+          const arr = [];
+          const lineData = [];  //进
+          itemData.forEach(o => {
+						lineData.push({name:o.materialName, value:o.qty});
+          });
+          // arr.push({ jin: lineJin, xiao: lineXiao, cun: lineCun, name: lineName});
+          // 中联站是数组，天宝的是单站，不需要放数组，注意！！，滁州的是数组
+          const resData = { data:lineData}
+          return resData;
+        },
+      }
+    })
+  </script>
+</body>
+</html>

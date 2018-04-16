@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>天宝生产</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src="../../component/customButton.js"></script>
+  <script src="../../component/produce/produceBar.js"></script>
+  <script src="../../component/produce/dengjiBar.js"></script>
+  <script src="../../component/produce/pie.js"></script>
+  <script src="../../component/produce/tuizhuan.js"></script>
+  <script src="https://cdn.bootcss.com/d3/4.12.2/d3.js"></script>
+  <script src="../../component/produce/remain.js"></script>
+  <script src="../../component/produce/produce.js"></script>
+  
+  <style>
+    .content-wrap{display: flex;height: 1030px;}
+    .left-content{width:960px;display: flex;flex-direction: column;}
+    .right-content{flex: 1;}
+    .left-top{width: 100%;flex: 1;}
+    .produce-wrap{width: 940px;height: 100%;margin: 0 auto;position: relative;}
+    .left-bottom{width: 99%;flex: 1;margin: 0 auto; display: flex;justify-content: space-around;}
+    .vehicle-wrap, .tuizhuan-wrap{width: 465px;margin: 5px;}
+
+    .produce-news, .produce-dengji{width: 100%; height: 91%; }
+    .ve-wrap, .hr-wrap{width: 100%; height: 93%;}
+
+    .produce-line{height: 100%;width: 960px;display: flex; flex-direction: column;justify-content:space-between;align-items: flex-start;}
+  </style>
+</head>
+<body>
+  <div class="content" id="root">
+    <div class="bar-wrap"><home></home></div>
+    <div class="content-wrap">
+      <div class="left-content">
+        <div class="left-top">
+          
+          <div class="produce-wrap block-bg">
+            <custom-button :data = "['生产快报', '等级产量']" v-on:changchart="changeProduce" ></custom-button>
+            <div class="produce-news" v-show="selectIndex===0">
+              <produce-bar :producenews="produceInfo"></produce-bar>
+            </div>
+            <div class="produce-dengji" v-show="selectIndex===1">
+              <dengji-bar :produceinfo="dengjiData"></dengji-bar>
+            </div>
+          </div>
+        </div> <!-- 生产快报、等级产量 -->
+        <div class="left-bottom">
+          <div class="vehicle-wrap block-bg">
+            <custom-button :data = "['车辆统计', '人力资源']" v-on:changchart="changeVehicle" ></custom-button>
+            <div class="ve-wrap">
+              <vehicle :vehicle="vehicleData"></vehicle>
+            </div>
+            <!-- <div class="hr-wrap" v-show="selectVehicle===1"></div> -->
+          </div><!-- 车辆统计、人力资源 -->
+          <div class="tuizhuan-wrap block-bg">
+            <tuizhuan :tuizhuaninfo ="tuizhuanData"></tuizhuan>
+          </div>
+        </div> <!-- 车辆统计、人力资源、退转剩废 -->
+      </div>
+      <div class="right-content">
+        <div class="produce-line">
+          <produce :produceinfo="produceData"></produce>
+          <produce :produceinfo="produceData"></produce>
+          <produce :produceinfo="produceData"></produce>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:'#root',
+      components:{
+        'custom-button':customBtn,
+        'produce-bar':Bar,
+        'dengji-bar':dengjiBar,
+        'vehicle':Vehicle,
+        'tuizhuan':TuizhuanBar,
+        'produce':Produce,
+      },
+      data:{
+        selectIndex:0,
+        selectVehicle:0,
+        produceInfo:{}, //生产快报
+        dengjiData:{},  //等级产量
+        vehicleData:{},  //车辆统计
+        tuizhuanData:{},  //退转剩废
+        produceData:{},  //退转剩废
+      },
+      mounted(){
+        this.getTuizhuan();
+        this.getProduce();
+      },
+      methods: {
+        changeProduce(index){
+          this.selectIndex = index;
+          if (index==0) {
+            this.produceInfo = {
+              SumQuantity: 100,
+              SumSend: 30,
+            }
+          } else {
+            this.dengjiData = {
+              title: '等级产量(m³)',
+              data:[
+                {
+                  type:'c10',
+                  complete:50,
+                  NOTcomplete:10,
+                  planNum:100,
+                },
+                {
+                  type:'c10',
+                  complete:50,
+                  NOTcomplete:10,
+                  planNum:100,
+                },
+              ]
+            }
+          }
+          
+        },
+        changeVehicle(index){
+          this.selectVehicle = index;
+          if (index==0) {
+            this.vehicleData = {
+              // title: '车辆统计',
+              data: {"去程":2,"厂内":4,"异常":1,"返程":1,"未知":0,"掉线":15,"工地":2},
+            }
+          } else {
+            this.vehicleData = {
+              title: '人力资源',
+              data: {"公司人数":200,"打卡人数":100},
+            }
+          }
+        },
+        getTuizhuan(){
+          this.tuizhuanData = {
+            data:[
+              {
+                Cancel:10,
+                Trans:10,
+                Remain:10,
+                Waste:10,
+              },
+              {
+                Cancel:30,
+                Trans:40,
+                Remain:50,
+                Waste:60,
+              },
+            ]
+          }
+        },
+        getProduce(){
+          this.produceData = [
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+            {"storagetype":"粉料仓","maxamount":110.000,"materialname":"二级粉煤灰","currentamount":63.722,"mixerno":"1#","stationcode":"QL","positionname":"1#-1粉煤灰1","positioncode":"QL101"},
+          ]
+        }
+        
+      }
+    })
+  </script>
+</body>
+</html>

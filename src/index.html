@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>南京天宝</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="content mainLayout" id="root" v-cloak>
+    <span style="font-size: 85px">天宝视讯一体化管理平台</span>
+    <div class="itemsDiv">
+      <a class="block-bg itemCard" v-for="(item,index) in items" v-bind:href=item.url>
+        <img class="itemImg"  v-bind:src=item.img />
+
+        <span style="font-size: 35px">{{item.name}}</span>
+      </a>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#root',
+        data: {
+          items: [
+            { img: "./imgs/index/product.png", name: "生产", url: "./html/produce/produce.html" },
+            { img: "./imgs/index/material.png", name: "物资", url: "./html/supplies/supplies.html" },
+            { img: "./imgs/index/cars.png", name: "车辆", url: "./html/vehicle/vehicle_index.html" },
+            { img: "./imgs/index/hr.png", name: "人资", url: "./html/hr/hr.html" },
+            { img: "./imgs/index/notice.png", name: "公告", url: "./html/notice/notice.html" },
+            { img: "./imgs/index/marketing.png", name: "营销", url: "./html/marketing/marketing.html" },
+            { img: "./imgs/index/warn.png", name: "报警", url: "./html/warn/warn.html" },
+            { img: "./imgs/index/safe.png", name: "安全", url: "" }
+          ]
+        }
+      })
+    </script>
+</body>
+
+</html>

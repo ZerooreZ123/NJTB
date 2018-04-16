@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>车辆管理</title>
+	<link href="../../css/base.css" rel="stylesheet">
+	<link href="../../css/vehicle.css" rel="stylesheet">
+	<script src="../../js/baseUntil.js"></script>
+	<script src="../../component/vehicle/vehicleBar.js"></script>
+</head>
+
+<body>
+	<div class="content" id="root" v-cloak>
+		<div class="line">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/01.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">统计信息</div>
+			</div>
+			<div class="right-full">
+				<div class="title">南京天宝</div>
+				<div>
+					<table border="0" cellspacing="3" cellpadding="0">
+						<tr class="title-tr">
+							<td>类型</td>
+							<td>厂内</td>
+							<td>工地</td>
+							<td>去程</td>
+							<td>返程</td>
+							<td>未知</td>
+							<td>掉线</td>
+						</tr>
+						<tr class="ct-tr">
+							<td>泵车</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="ct-tr">
+							<td>搅拌车</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="line" style="margin-top: 3px;">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/02.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">生产信息</div>
+			</div>
+			<div class="right-not-full">
+				<!-- 生产快报 -->
+				<vehicle-bar :vehicleproduce="produceInfo"></vehicle-bar>
+			</div>
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/03.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">厂内</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+		</div>
+		<div class="line line-margin">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/06-2.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">去程</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/05.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">工地</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+		</div>
+		<div class="line line-margin">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/06.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">返程</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/07.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">未知</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+		</div>
+		<div class="line line-margin">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/08.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">掉线</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/11.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">异常</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+		</div>
+		<div class="line line-margin">
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/10.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">闲置超时</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+			<div class="icon">
+				<img src="../../imgs/vehicle/icon/09.png" alt height="70" style="margin-top: 30px;">
+				<div class="text">间隔超时</div>
+			</div>
+			<div class="right-not-full">
+				<span class="car">235
+					<img src="../../imgs/vehicle/car/01.png">
+				</span>
+				<span class="car">234
+					<img src="../../imgs/vehicle/car/04.png">
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+	new Vue({
+		el: "#root",
+		components: {
+			'vehicle-bar': Bar,
+		},
+		data: {
+			produceInfo: {}, //生产快报
+		},
+	})
+</script>
+
+</html>

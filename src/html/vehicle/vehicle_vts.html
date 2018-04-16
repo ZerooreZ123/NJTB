@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VTS</title>
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/vehicle-vts.css" rel="stylesheet">
+    <script src="../../js/baseUntil.js"></script>
+    <script src="../../component/vehicle/productNews.js"></script>
+    <script src="../../component/vehicle/vts.js"></script>
+</head>
+<body>
+    <div class="content mainLayout" id="root" v-cloak>
+        <home></home>
+        <div class="flexLayout">
+            <div class="sideBar">
+                <div class="panel" style="height: 557px;">
+                    <div class="panel-left-image">场<br>内<br>等<br>待<br>车<br>辆</div>
+                    <div class="car-list-ctn">
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-orange">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-blue">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-purple">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-green">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-pink">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-color-0">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                    </div>
+                </div>
+                <div class="panel small-list">
+                    <div class="panel-left-image">场<br>内<br>停<br>用<br>车<br>辆</div>
+                    <div class="car-list-ctn">
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-orange">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-blue">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-purple">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-green">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-pink">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-color-0">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                    </div>
+                </div>
+                <div class="panel small-list">
+                    <div class="panel-left-image">场<br>外<br>未<br>知<br>车<br>辆</div>
+                    <div class="car-list-ctn">
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-orange">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-blue">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-purple">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-green">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-pink">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-color-0">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                    </div>
+                </div>
+                <div class="panel small-list">
+                    <div class="panel-left-image">场<br>外<br>离<br>线<br>车<br>辆</div>
+                    <div class="car-list-ctn">
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-orange">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-blue">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-purple">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-green">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-pink">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-color-0">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                        <div class="car-list c-red">678<img src="../../imgs/vehicle/car/jbc.png" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="vts-container">
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+                <vts></vts>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 10px;left: 480px;">
+            <div class="car-list-demo c-red">超速</div>
+            <div class="car-list-demo c-orange">非法卸料</div>
+            <div class="car-list-demo c-color-0">异常停留</div>
+            <div class="car-list-demo c-purple">超时卸料</div>
+            <div class="car-list-demo c-blue">滚筒停转</div>
+            <div class="car-list-demo c-green">正在卸料</div>
+            <div class="car-list-demo c-pink">正在搅拌</div>
+            <div class="car-list-demo">全部车辆：xxx台</div>
+            <div class="car-list-demo">上线车辆：xxx台</div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#root",
+        components: {
+        }
+    })
+</script>
+</html>

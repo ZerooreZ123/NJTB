@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>人资</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src='../../js/common/echarts-liquidfill.js'></script>
+  <script src="../../component/hr/hrCount.js"></script>
+  <script src="../../component/hr/saleRanking.js"></script>
+  <style></style>
+</head>
+
+<body>
+  <div class="content" style="display: flex;" id="root" v-cloak>
+    <div class="columnContent" style="margin: 0px 10px 5px 10px;">
+      <div style="display: flex;justify-content: space-between;align-items: center;height: 50px;">
+        <a href="../../index.html">
+          <img src="../../imgs/marketing/marketing_home.png" />
+          <span style="font-size: 30px;">南京天宝</span>
+        </a>
+      </div>
+      <hrcount></hrcount>
+    </div>
+    <iframe  src="http://fanyi.baidu.com/#auto/zh/" frameborder="0" style="display: flex;flex: 2;"></iframe>
+      <sale></sale>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      components: {
+        hrcount: HRCount,
+        sale:SaleRangking,
+      },
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

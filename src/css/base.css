@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-family: "微软雅黑";
+}
+/* html{overflow: hidden;}
+body{overflow: hidden;} */
+/* body {transform: scale(0.5);transform-origin: 0 0;} */
+
+.content {
+  width: 1920px;
+  height: 1080px;
+  overflow: auto;
+  background: url(../imgs/common/bg.jpg) no-repeat;
+  position: relative;
+}
+
+.areaContent{
+  display: flex;
+  flex: 1;
+}
+
+.columnContent{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+/* 
+[v-cloak] {
+  display: none;
+} */
+
+/*滚动条代码 兼容webkit内核*/
+
+.scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: rgba(52, 143, 237, 0.2);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(52, 143, 237, 0.4);
+  border-radius: 4px;
+}
+/* 滚动条样式统一使用这个class */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(52, 143, 237, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(52, 143, 237, 0.4);
+  border-radius: 4px;
+}
+
+/* 带蓝色透明度的背景色值 */
+
+.block-bg {
+  background-color: rgba(52, 143, 237, 0.15);
+  border-radius: 5px
+}
+
+/* 适配地图的层级切换控件里的图标字体颜色被覆盖为白色而不显示 */
+.amap-ui-control-layer-list label span{color: black}
+.amap-ui-control-layer .iconfont{color: black}
+
+/*黄色字体颜色*/
+
+.gold {
+  color: rgb(250, 209, 24);
+}
+
+.yellow {
+  background: #eeb236!important;
+}
+
+.red {
+  background: #ed355b!important;
+}
+.green{
+  background: #008100!important;
+}
+.reds{
+  background: #8b0000!important;
+}
+
+/*车辆页面警报颜色*/
+.cerise{background:red!important;}
+.orange{background:#C674F1!important;}
+.yellows{background:#FFFF80!important;}
+.purple{background: #BE1FB7!important;}
+.blue{background: #7AC1FC!important;}
+.greens{background: #6DB700!important}
+.pinks{background: #2E2ED1!important}
+/* 普通标题的字体尺寸，比如生成模块站点内四个图表的标题尺寸 */
+
+.tabs {
+  display: inline;
+}
+.tabs span img{
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 48px;
+}
+.tabs span{
+  display:flex;
+  align-items: center;
+  height: 45px;
+  /* line-height: 48px; */
+  /* display: inline-block; */
+  font-size: 30px;
+  cursor: pointer;
+}

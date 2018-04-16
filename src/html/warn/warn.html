@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>报警</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/warn.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src="../../component/warn/produceFalut.js"></script>
+  <script src="../../component/warn/CarsFalut.js"></script>
+  <script src="../../component/warn/materialFalut.js"></script>
+  <script src="../../component/warn/marketingFalut.js"></script>
+  <style></style>
+</head>
+
+<body>
+  <div class="content columnContent" id="root" v-cloak>
+    <div style="display: flex;margin-left: 20px;justify-content: space-between;align-items: center;height: 50px;">
+      <a href="../../index.html">
+        <img src="../../imgs/marketing/marketing_home.png" />
+        <span style="font-size: 30px;">南京天宝</span>
+      </a>
+    </div>
+    <div style="display: flex;flex: 1;">
+      <produce v-bind:data="produce"></produce>
+      <cars v-bind:data="cars"></cars>
+      <material v-bind:data="material"></material>
+      <marketing v-bind:data="marketing"></marketing>
+    </div>
+
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      components: {
+        produce: ProduceFalut,
+        cars: CarsFalut,
+        material: MaterialFault,
+        marketing: MarketingFault,
+      },
+      data: {
+        produce: ['unit', 'unit', 'network', 'unit', 'network', 'unit', 'network',
+          'unit', 'network', 'unit', 'network', 'unit', 'network', 'unit', 'network', 'unit', 'network',
+          'unit', 'network', 'network', 'unit', 'network', 'unit', 'unit', 'network', 'network', 'unit',
+          'network', 'unit', 'network', 'unit', 'network', 'unit', 'network'],
+        cars: {
+          overTime: [
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'jbc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'jbc', type: 2 }],
+            [{ no: '苏A12345', car: 'jbc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 1 }],
+            [{ no: '苏A12345', car: 'jbc', type: 1 }, { no: '苏A12345', car: 'bc', type: 2 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'jbc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'jbc', type: 2 }],
+            [{ no: '苏A12345', car: 'jbc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 2 }],
+            [{ no: '苏A12345', car: 'jbc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'jbc', type: 1 }],
+            [{ no: '苏A12345', car: 'jbc', type: 1 }, { no: '苏A12345', car: 'bc', type: 2 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 2 }],
+          ],
+          idleCars: [
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 0 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 0 }, { no: '苏A12345', car: 'bc', type: 1 }],
+            [{ no: '苏A12345', car: 'bc', type: 1 }, { no: '苏A12345', car: 'bc', type: 2 }],
+          ],
+        },
+        material: [
+          { detail: '料仓22222222', icon: 'bunker' },
+          { detail: '退还wewewew', icon: 'back' },
+          { detail: '转出11111111111', icon: 'rollout' },
+          { detail: '你丫有种来打我啊!!!!!!!!!!', icon: 'left' },
+          { detail: '报废', icon: 'scrap' },
+          { detail: '料仓22222222', icon: 'bunker' },
+          { detail: '退还wewewew', icon: 'back' },
+          { detail: '转出11111111111', icon: 'rollout' },
+          { detail: '你丫有种来打我啊!!!!!!!!!!', icon: 'left' },
+          { detail: '报废', icon: 'scrap' },
+          { detail: '料仓22222222', icon: 'bunker' },
+          { detail: '退还wewewew', icon: 'back' },
+          { detail: '转出11111111111', icon: 'rollout' },
+          { detail: '你丫有种来打我啊!!!!!!!!!!', icon: 'left' },
+          { detail: '报废', icon: 'scrap' },
+          { detail: '打你就打你,看我丫打不死你丫的!!!!!!!!!!!!!!!!!!!说,还老不老实啦.............', icon: 'bunker' },
+          { detail: '退还wewewew', icon: 'back' },
+          { detail: '转出11111111111', icon: 'rollout' },
+          { detail: '你丫有种来打我啊!!!!!!!!!!', icon: 'left' },
+          { detail: '报废', icon: 'scrap' },
+        ],
+        marketing: [
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'other', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'temp', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+          { type: 'formal', no: '006-NHT', name: '浦口是颠三倒四', detail: '欠款预警' },
+        ],
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.mainLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.itemsDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.itemCard {
+  width: 225px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itemImg{
+  width:115px;
+  height:115px;
+  border-radius: 57.5px;
+  margin-bottom: 30px;
+}

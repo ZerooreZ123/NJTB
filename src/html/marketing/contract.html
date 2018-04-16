@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>合同</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/marketing.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src="../../component/marketing/productData.js"></script>
+  <script src="../../component/marketing/mapMarker.js"></script>
+  <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.4&key=865e5946e363e3889a01b89f8ba5d069'></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="content mainLayout columnContent" id="root" v-cloak>
+    <div class="toptitle">
+      <a href="../../index.html">
+        <img src="../../imgs/marketing/marketing_home.png" />
+        <span>南京天宝</span>
+      </a>
+    </div>
+    <div class="areaContent">
+      <div class="contractItems block-bg">
+        <div class="contractBtnView">
+          <button v-bind:class="index==selectedMenu?'buttonNormal buttonSelected':'buttonNormal'" v-for="(item,index) in menuBtns"
+            v-on:click="selectedMenu = index">{{item}}</button>
+          <input class="buttonNormal" type="text" style="border: 0px; padding-left: 15px;" placeholder="🔍搜索"></input>
+        </div>
+        <div class="columnContent" style="padding: 5px;">
+          <div class="contractCell" style="background-color: rgba(52, 143, 237, 0.4);font-size: 20px;">
+            <span style="display: flex;flex: 2;justify-content: center;">序号</span>
+            <span style="display: flex;flex: 5;justify-content: center;">工程名称</span>
+            <span style="display: flex;flex: 4;justify-content: center;">合同编号</span>
+            <span style="display: flex;flex: 2;justify-content: center;">异常类型</span>
+          </div>
+          <div v-for="(item,index) in contracts" class="contractCell" v-bind:style='index%2==1&&"background-color: rgba(52, 143, 237, 0.4);"'>
+            <span style="display: flex;flex: 2;justify-content: center;">{{index+1}}</span>
+            <span style="display: flex;flex: 5;">{{item.name}}</span>
+            <span style="display: flex;flex: 4;">{{item.no}}</span>
+            <div style="display: flex;flex: 1.5;background-color: oldlace;height: 30px;margin-right: 10px;"></div>
+          </div>
+        </div>
+        <div style="height: 50px;text-align: right;margin-right: 25px;">
+          {{currentPage}}/{{totalPage}}
+        </div>
+        <div class="contractBtnView" style="margin-top: 0px;">
+          <button class="buttonNormal" v-on:click="currentPage!=1&&currentPage--">上一页</button>
+          <button class="buttonNormal" v-on:click="currentPage!=totalPage&&currentPage++">下一页</button>
+        </div>
+      </div>
+      <div class="columnContent" style="margin:0px 0px 10px 10px;">
+        <div class="areaContent block-bg">
+          <mapmarker></mapmarker>
+        </div>
+        <div class="block-bg" style="display: flex;height: 220px;margin-top: 10px;">
+          <productdata></productdata>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      components: {
+        mapmarker: MapMarker,
+        productdata: ProductData,
+      },
+      data: {
+        menuBtns: ['正式合同', '临时合同', '其他'],
+        selectedMenu: 0,
+        contracts: [
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+          { name: '南京恒大龙军项目(1#20W楼)', no: '006-HDG-2016-11-01', type: 'yellow' },
+        ],
+        selectedIndex: 0,
+        currentPage: 1,
+        totalPage: 29,
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

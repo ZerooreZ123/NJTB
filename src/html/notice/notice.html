@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>公告</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/baseUntil.js"></script>
+  <style></style>
+</head>
+
+<body>
+  <div class="content" style="display: flex;" id="root" v-cloak>
+    <div style="display: flex;flex-direction: column;width: 355px;margin: 17px 10px 13px 10px;">
+      <div style="display: flex;justify-content: space-between;align-items: center;height: 50px;">
+        <a href="../../index.html">
+          <img src="../../imgs/marketing/marketing_home.png" />
+          <span style="font-size: 30px;">南京天宝</span>
+        </a>
+      </div>
+      <div class="block-bg columnContent" style="border-radius: 10px;">
+        <div style="display: flex;height: 70px;justify-content: center;align-items: center;
+        background-color: rgba(52, 143, 237, 0.4);border-radius: 10px 10px 0px 0px;">
+          <span style="font-size: 30px;">公告标题</span>
+        </div>
+        <div style="display: flex;flex-direction: column;padding: 0px 20px 0px 20px;" v-for="(item,index) in notices">
+          <div style="height: 50px;margin-top: 20px;">
+            <span style="font-size: 25px;">{{item.name}}</span>
+          </div>
+          <button style="display: flex;height: 65px;border-radius: 5px;border: 0px;justify-content: center;align-items: center;margin-bottom: 10px;"
+            v-bind:style="'background-color:'+(selectedIndex!=index+'-'+infoIndex?'rgba(52, 143, 237, 0.2)':'rgba(26, 147, 251, 1)')"
+            v-for="(info,infoIndex) in item.list" v-on:click="selectedIndex=index+'-'+infoIndex">
+            <span style="font-size: 25px;">{{info}}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="areaContent" v-html="content" style="margin: 17px 30px 13px 30px;background-color: burlywood;">
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      components: {
+      },
+      data: {
+        notices: [
+          { name: '新年贺词', list: ['2018年新年祝福语'] },
+          { name: '假日祝福', list: ['劳动节祝福语', '端午节祝福语'] },
+          { name: '领导视察', list: ['欢迎语'] },
+          { name: '放假公告', list: ['放假通知'] },
+        ],
+        selectedIndex: '0-0',
+        content: ''
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+.mainLayout{
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.toptitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 30px;
+}
+
+.buttonNormal{
+  font-size: 25px;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(52, 143, 237, 0.15);
+  border-radius: 5px;
+  border: 0px;
+}
+
+.buttonSelected{
+  background-color: rgba(26, 147, 251, 1);
+}
+
+input::-webkit-input-placeholder{
+  color:white;
+  font-size: 25px;
+}
+
+.compleDegreeTitle{
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.rankingItem{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.rankingAvatar{
+  width: 60px;
+  height: 60px;
+  margin-left: 30px;
+  margin-right: 5px;
+}
+
+.contractItems{
+  display: flex;
+  flex-direction: column;
+  width: 725px;
+  margin-bottom: 5px;
+}
+
+.contractBtnView{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contractCell{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 18px;
+}
+

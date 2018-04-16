@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>地图</title>
+  <link href="../../css/base.css" rel="stylesheet">
+  <link href="../../css/map_serach.css" rel="stylesheet">
+  <script src="../../js/common/underscore-min.js"></script>
+  <script src="../../js/baseUntil.js"></script>
+  <script src="http://webapi.amap.com/maps?v=1.4.1&key=84670fedcb46af4a61da5a6cd32bbf62"></script>
+  <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+  <script src="../../js/common/gps.js"></script>
+  <script src="../../component/vehicle/map.js"></script>
+  <script src="./catList.js"></script>
+  <style>
+    .topBar {
+      width: 1500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .demoCar {
+      float: right;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .demoCar img {
+      vertical-align: middle;
+      height: 23px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content mainLayout" id="root" v-cloak>
+    <div class="topBar">
+      <home></home>
+      <div class="legend">
+        <div class="demoCar">
+          <img src="../../imgs/vehicle/map/workMarks.png" alt="">&nbsp;工地</div>
+        <div class="demoCar">
+          <img src="../../imgs/vehicle/map/jiaoban.png" alt="">&nbsp;搅拌车</div>
+        <div class="demoCar">
+          <img src="../../imgs/vehicle/map/bengche.png" alt="">&nbsp;泵车</div>
+        <div class="demoCar">
+          <img src="../../imgs/vehicle/map/offLine.png" alt="">&nbsp;离线</div>
+      </div>
+    </div>
+    <vmap :catlist="catlist"></vmap>
+  </div>
+</body>
+<script>
+  new Vue({
+    el: "#root",
+    components: {
+      vmap: vmap
+    },
+    data: {
+      catlist: catList
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>车辆详情</title>
+    <link href="../../css/base.css" rel="stylesheet">
+	<link href="../../css/vehicle-detail.css" rel="stylesheet">
+    <script src="../../js/baseUntil.js"></script>
+    <script src='../../js/common/echarts-liquidfill.js'></script>
+    <script src="../../component/produce/pie.js"></script>
+    <script src="../../component/vehicle/vehicleDegreen.js"></script>
+</head>
+<body>
+    <div class="content mainLayout" id="root" v-cloak>
+        <div class="bar">
+            <home></home>
+            <div class="goMap"><img src="../../imgs/vehicle/dt.png">查看地图</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table style="width: 100%;">
+                    <tr class="t-head">
+                        <td>类型</td>
+                        <td>厂内</td>
+                        <td>工地</td>
+                        <td>去程</td>
+                        <td>返程</td>
+                    </tr>
+                    <tr>
+                        <td>泵车</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="panel xzcs">
+                    <div class="panel-left-image">闲<br>置<br>超<br>时</div>
+                    <div class="car-list-ctn">
+                        <div class="car-tag c-blue">A100101</div><div class="car-tag c-blue">A100101</div>
+                        <div class="car-tag c-yellow">A100101</div><div class="car-tag c-yellow">A100101</div>
+                        <div class="car-tag c-red">A100101</div><div class="car-tag c-red">A100101</div>
+                    </div>
+                </div>
+                <div class="panel jgcs">
+                    <div class="panel-left-image">间<br>隔<br>超<br>时</div>
+                    <div class="car-list-ctn">
+                        <div class="car-tag c-blue">A100101</div><div class="car-tag c-blue">A100101</div>
+                        <div class="car-tag c-yellow">A100101</div><div class="car-tag c-yellow">A100101</div>
+                        <div class="car-tag c-red">A100101</div><div class="car-tag c-red">A100101</div>
+                    </div>
+                </div>
+                <div class="panel demo">
+                    <div class="car-tag c-blue">闲置超1小时</div>
+                    <div class="car-tag c-yellow">闲置超2小时</div>
+                    <div class="car-tag c-red">闲置超3小时</div>
+                    <div class="car-tag c-blue">间隔超1小时</div>
+                    <div class="car-tag c-yellow">间隔超2小时</div>
+                    <div class="car-tag c-red">间隔超3小时</div>
+                </div>
+            </div>
+            <div class="col panel">3</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col2 panel">
+                        <vehicle :vehicle="vehicleData"></vehicle>
+                    </div>
+                    <div class="col2 panel">
+                        <vehicledegreen></vehicledegreen>
+                    </div>
+                </div>
+            </div>
+            <div class="col panel">4</div>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#root',
+        components: {
+            vehicle: Vehicle,
+            vehicledegreen:VehicleDegreen
+        },
+        data: {
+            vehicleData : {
+                title: '车辆统计'
+            },
+        },
+        mounted() {
+            const vehicleData = {
+              title: '车辆统计',
+              data: {"去程":2,"厂内":4,"异常":1,"返程":1,"未知":0,"掉线":15,"工地":2},
+            };
+            this.vehicleData = vehicleData;
+        }
+    })
+</script>
+</html>

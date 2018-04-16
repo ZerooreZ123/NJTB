@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>生产合同</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/baseUntil.js"></script>
+  <script src="../../js/common/gps.js"></script>
+  <script src="../../component/produce/proContract.js"></script>
+  <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.4&key=865e5946e363e3889a01b89f8ba5d069'></script>
+  <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+  <script type="text/javascript" src="../../js/tempData.js"></script>
+  <script type="text/javascript" src="../../component/map/progectMap.js"></script>
+  <script type="text/javascript" src="../../component/produce/commonBar.js"></script>
+  <style>
+    .produce-wrap{display: flex;justify-content: space-around;}
+    .left-content{width: 470px;height: 1010px;padding: 5px 0;}
+    .mid-content{width: 960px;height: 1020px;}
+    .right-content{width: 470px;height: 1020px;}
+
+    /* 地图点标注的文本label样式 */
+    
+		.marker-project{background: #2c85ea!important;white-space: nowrap;padding: 5px;}
+		.amap-marker-label,
+		.marker-title {
+			color: #FFF;
+			background: #b352fa;
+			border: 0;
+			padding: 1px 1px;
+			;
+		}
+
+		.marker-vehicle {
+		
+			color: #FFF;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.marker-vehicle .marker-title {
+			margin-bottom: 2px;
+			font-size: 12px;
+		}
+
+		.amap-marker-content {
+			white-space: inherit!important
+		}
+  </style>
+</head>
+<body>
+  <div class="content" id="root">
+    <home></home>
+    <div class="produce-wrap">
+      <div class="left-content block-bg">
+        <pro-contract :contractdata="contractData"></pro-contract>
+      </div>
+      <div class="mid-content">
+        <maps :project="projectArr" ref="projectmap"></maps>
+      </div>
+      <div class="right-content block-bg">
+        <common-bar :producenews="produceDayArr" :moreconfig="moreConfig"></common-bar>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:'#root',
+      components: {
+        'maps':ProjectMap,
+      },
+      data: {
+        contractData:[],
+        projectArr:[],
+        produceDayArr:{}, //当日方量
+        moreConfig:{},   //Echart配置
+      },
+      mounted(){
+        this.contractData = produceContractData;
+        this.setMap();
+        this.moreConfig = {
+          title: {
+            text: '生产快报(M³555)',
+          },
+          series: [{
+            barWidth:120
+          }]
+        }
+      },
+      methods: {
+        setMap(){
+          this.projectArr = contractData.list.slice(0,10);
+          this.produceDayArr = {
+              SumQuantity: 100,
+              SumSend: 30,
+            }
+        },
+      }
+    })
+  </script>
+</body>
+</html>

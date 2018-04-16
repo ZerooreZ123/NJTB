@@ -1,0 +1,94 @@
+.bar {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.panel {
+  background-color: rgba(52, 143, 237, 0.15);
+  position: relative;
+}
+.panel-left-image {
+  background: url("../imgs/vehicle/c.png") no-repeat left top;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding-top: 50px;
+  line-height: 20px;
+}
+.car-list-ctn {
+  margin-left: 30px;
+}
+.goMap {
+  float: right;
+  font-size: 18px;
+  margin-right: 17px;
+  background-color: rgba(52, 143, 237, 0.4);
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.goMap img {
+  margin-right: 5px;
+  vertical-align: top;
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.col {
+  width: 955px;
+  height: 510px;
+  margin-top: 5px;
+}
+.col2 {
+  width: 475px;
+  height: 510px;
+}
+td {
+  text-align: center;
+  background-color: rgba(52, 143, 237, 0.15);
+  height: 40px;
+}
+.t-head td {
+  font-size: 22px;
+  background-color: rgba(52, 143, 237, 0.4);
+  height: 53px;
+}
+.car-tag {
+  display: inline-block;
+  padding: 0 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 23px;
+  line-height: 23px;
+}
+.c-blue {
+  background-color: #0091e8;
+}
+.c-yellow {
+  background-color: #f2b147;
+}
+.c-red {
+  background-color: #fd3558;
+}
+.xzcs {
+  height: 169px;
+  margin-top: 5px;
+}
+.jgcs {
+  height: 169px;
+  margin-top: 5px;
+}
+.demo {
+  margin-top: 5px;
+  height: 57px;
+}
+.demo .car-tag {
+  margin-top: 15px;
+  line-height: 30px;
+  height: 30px;
+}

@@ -1,0 +1,73 @@
+.flexLayout {
+  display: flex;
+  margin-left: 10px;
+}
+.panel {
+  background-color: rgba(52, 143, 237, 0.15);
+  position: relative;
+}
+.sideBar {
+  width: 460px;
+}
+.small-list {
+  height: 154px;
+  margin-top: 3px;
+}
+.panel-left-image {
+  background: url("../imgs/vehicle/c.png") no-repeat left top;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding-top: 50px;
+  line-height: 16px;
+}
+.car-list-ctn {
+    margin-left: 30px;
+}
+.car-list {
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 25px;
+    padding: 0 10px;
+    display: inline-block;
+}
+.car-list-demo {
+    margin-left: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+.car-list img {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.c-red {
+    background-color: #ff0512;
+}
+.c-orange {
+    background-color: #ff651f;
+}
+.c-blue {
+    background-color: #007ee7;
+}
+.c-green {
+    background-color: #00a229;
+}
+.c-pink {
+    background-color: #ee4e62;
+}
+.c-purple {
+    background-color: #b111ad;
+}
+.c-color-0 {
+    background-color: #b59c2b;
+}
+.vts-container {
+    display: flex;
+    width: 1445px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 985px;
+}
