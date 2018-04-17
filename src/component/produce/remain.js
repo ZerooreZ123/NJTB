@@ -10,6 +10,9 @@ const Remain = Vue.extend({
   template: chartTemplate,
   props: ['remain', 'size'],
   mounted() {
+    // 过滤 currentamount的值为负数，或者 currentamount > maxamount 的情况
+    this.remain.currentamount = this.remain.currentamount >0 ? this.remain.currentamount : 0;
+    this.remain.maxamount = this.remain.maxamount >this.remain.currentamount ? this.remain.maxamount : this.remain.currentamount;
     this.setChart({
       id: this.$refs.remain,
       value: this.remain.currentamount
@@ -17,7 +20,8 @@ const Remain = Vue.extend({
   },
   watch: {
     remain() {
-      // console.log(this.Remain);
+      this.remain.currentamount = this.remain.currentamount >0 ? this.remain.currentamount : 0;
+      this.remain.maxamount = this.remain.maxamount >this.remain.currentamount ? this.remain.maxamount : this.remain.currentamount;
       this.updateChart();
     },
     size() {

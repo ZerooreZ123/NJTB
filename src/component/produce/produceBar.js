@@ -138,9 +138,9 @@ const Bar = {
     },
     updateChart: function () {
       var barData = [];
-      barData.push(this.producenews.SumQuantity)
-      barData.push(this.producenews.SumSend)
-      barData.push(this.producenews.SumSend > this.producenews.SumQuantity ? 0 : this.producenews.SumQuantity - this.producenews.SumSend)
+      barData.push(this.producenews.sumQuantity)
+      barData.push(this.producenews.sumSend)
+      barData.push(this.producenews.sumSend > this.producenews.sumQuantity ? 0 : this.producenews.sumQuantity - this.producenews.sumSend)
       const option = {
         series: [{
           data: barData

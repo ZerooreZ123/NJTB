@@ -90,13 +90,13 @@
         }
       },
       methods: {
-        setMap(){
-          this.projectArr = contractData.list.slice(0,10);
-          this.produceDayArr = {
-              SumQuantity: 100,
-              SumSend: 30,
-            }
-        },
+        async setMap(){
+            this.projectArr = contractData.list.slice(0,10);
+            this.produceDayArr = {
+                SumQuantity: 100,
+                SumSend: 30,
+              };
+          },
       }
     })
   </script>

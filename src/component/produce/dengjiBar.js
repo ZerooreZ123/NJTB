@@ -141,8 +141,8 @@ const dengjiBar = {
       this.produceinfo.data.forEach((value, index) => {
         category.push(value.type);
         barData.push(value.complete.toFixed(0));
-        // console.log(value.complete,value.NOTcomplete);
-        const remain = value.complete > value.planNum ? 0 : value.NOTcomplete
+        // console.log(value.complete,value.notComplete);
+        const remain = value.complete > value.planNum ? 0 : value.notComplete
         bgData.push(remain.toFixed(0));
       })
       
